@@ -31,6 +31,7 @@ Java does not provide a built-in way to determine if two different objects are e
 ```java
 public class Door {
     int height, width;
+    @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Door)) {
             return false;
@@ -38,6 +39,7 @@ public class Door {
         Door d = (Door) obj;
         return height == d.height && width == d.width;
     }
+    @Override
     public int hashCode() {
         return height * 39 + width;
     }
