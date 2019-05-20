@@ -270,6 +270,14 @@ public class MyClass {
         Day d2 = Day.MONDAY;
     }
 }
+
+import static Day.*;
+public class MyClass2 {
+    public static void main(String[] args) {
+        Day d1 = SUNDAY;
+        Day d2 = MONDAY;
+    }
+}
 ```
 
 Enums are special types of classes, so they can have extra methods and data defined.
