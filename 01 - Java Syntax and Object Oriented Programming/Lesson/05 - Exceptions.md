@@ -16,6 +16,8 @@ public class MyClass {
         } catch (IOException e) {
             // If an I/O error occurs, such as the file doesn't exist, we'll get here
             e.printStackTrace();
+        } finally {
+          System.out.println("I'm done.");
         }
     }
 }
