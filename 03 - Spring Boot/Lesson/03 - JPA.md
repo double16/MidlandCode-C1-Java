@@ -2,7 +2,7 @@
 
 JPA (Java Persistence API) is a method for storing Java objects into relational databases. It follows a pattern known as Object Relational Mapping (ORM). It greatly simplifies persistence. The down side is less visibility and control in the underlying database.
 
-We'll cover some of the API. An complete discussion is out of scope. [Introduction to the Java Persistence API](https://docs.oracle.com/javaee/6/tutorial/doc/bnbpz.html) is a recommended resource.
+We'll cover some of the API. An complete discussion is out of scope. [Introduction to the Java Persistence API](https://docs.oracle.com/javaee/6/tutorial/doc/bnbpz.html) is a recommended resource, also the [javadoc](https://docs.oracle.com/javaee/7/api/index.html?javax/persistence/package-summary.html).
 
 An object that can be stored in a database is called an `Entity`. `@Id` marks the field as the primary key of the object. `@GeneratedValue` determines how the ID will be generated. In this case, the database will automatically generate a key.
 

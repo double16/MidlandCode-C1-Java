@@ -1,4 +1,4 @@
-# JPA CRUD
+# JPA CRUD (Create Read Update Delete)
 
 Create a Spring Boot application that reads and writes a record in a database based on [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/). We'll use H2, an in-memory database, in this exercise.
 
