@@ -2,6 +2,9 @@ package edu.midlandu.codeacademy.adventure;
 
 import java.math.BigDecimal;
 
+/**
+ * Models the player, health and wealth.
+ */
 public class Player {
     private Persona persona;
     private String name;

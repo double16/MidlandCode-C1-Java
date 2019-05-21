@@ -1,6 +1,7 @@
 package edu.midlandu.codeacademy.adventure;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Challenge {
@@ -9,6 +10,11 @@ public class Challenge {
 
     public Challenge(String description) {
         this.description = description;
+    }
+
+    public Challenge(String description, Collection<Choice> choices) {
+        this.description = description;
+        this.choices.addAll(choices);
     }
 
     public void choose(Player player, Choice choice) {

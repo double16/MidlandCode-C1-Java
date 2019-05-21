@@ -11,6 +11,7 @@ public class Main {
         String playerName = System.getenv("USER");
 
         World world = new MiddleEarth();
+        //World world = new Chicago1920sWorld();
         world.initChallenges();
 
         console.format("Welcome to %s!\n", world.getName());
