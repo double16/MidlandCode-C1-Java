@@ -217,3 +217,11 @@ spring.datasource.url=jdbc:mysql://localhost:3306/db_example
 spring.datasource.username=springuser
 spring.datasource.password=ThePassword
 ```
+
+Add the MySQL database driver to your `build.gradle`:
+
+```groovy
+dependencies {
+    compile 'mysql:mysql-connector-java'
+}
+```
