@@ -7,5 +7,6 @@ To read input from user.
 ```java
 System.out.print("Enter the string to reverse: ");
 String s = System.console().readLine();
+int i = Integer.parseInt(s);
 ```
 
