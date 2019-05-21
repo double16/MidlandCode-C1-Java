@@ -5,7 +5,7 @@ Create a Spring Boot application that returns a greeting based on [Building a RE
 ## Create the Spring Boot Application
 
 ```shell
-$ spring init -d=h2,jdbc,jpa,actuator,cache,devtools,hateoas,lombok -t gradle-project -a simple-rest --description "Spring Boot REST" -g edu.midlandu.codeacademy -j 11 -p jar simple-rest
+$ spring init -d=h2,jdbc,data-jpa,data-rest,data-rest-hal,actuator,cache,devtools,hateoas,lombok -t gradle-project -a simple-rest --description "Spring Boot REST" -g edu.midlandu.codeacademy -j 11 -p jar simple-rest
 Using service at https://start.spring.io
 Project extracted to '/Users/double/simple-rest'
 ```
