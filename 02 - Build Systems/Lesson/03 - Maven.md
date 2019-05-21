@@ -1,6 +1,6 @@
 # Maven
 
-[Maven](https://maven.apache.org) is a build tool that makes building, packaging and testing Java applications much easier. It favors convention instead of configuration. In an Ant script, many things need to be configured, such as the source code location. For example, Maven assumes applicaton source code to be in the `src/main/java` directory and test code in the `src/main/test` directory.
+[Maven](https://maven.apache.org) is a build tool that makes building, packaging and testing Java applications much easier. It favors convention instead of configuration. In an Ant script, many things need to be configured, such as the source code location. For example, Maven assumes applicaton source code to be in the `src/main/java` directory and test code in the `src/test/java` directory.
 
 ## Maven the Repository
 
