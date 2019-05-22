@@ -8,4 +8,4 @@ You may model the adventure game (using the solution if you like) in the databas
 
 ## Extra
 
-Use relationships (i.e. @OneToMany) for some variants on items, such as colors.
+Use relationships (i.e. [@OneToMany](https://docs.oracle.com/javaee/7/api/javax/persistence/OneToMany.html)) for some variants on items, such as colors.

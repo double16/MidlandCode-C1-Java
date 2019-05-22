@@ -205,23 +205,34 @@ Visit <http://localhost:8080/people>:
 }
 ```
 
-## Extra
+## Extra Credit
 
 Install MySQL on your laptop and get your REST API reading and writing to it. You'll need a configuration similar to the following in `src/main/resources/application.properties`:
+
+You'll need to create a database and user in MySQL. You could use commands in the `mysql` command line as follows:
+
+```shell
+mysql> create database db_example; -- Create the new database
+mysql> create user 'springuser'@'%' identified by 'ThePassword'; -- Creates the user
+mysql> grant all on db_example.* to 'springuser'@'%'; -- Gives all the privileges to the new user on the newly created database
+```
 
 ```properties
 # The ddl-auto allows Hibernate to automatically create and update the database schema
 spring.jpa.hibernate.ddl-auto=create
 # db_example should be replaced by the name of your database
+# localhost:3306 refers to the MySQL database, NOT your Spring Boot application
 spring.datasource.url=jdbc:mysql://localhost:3306/db_example
 spring.datasource.username=springuser
 spring.datasource.password=ThePassword
 ```
 
-Add the MySQL database driver to your `build.gradle`:
+Add the MySQL database driver to your `build.gradle`. Every database product (MySQL, Postgres, etc.) has it's own driver thats will need to be added to your dependencies. This applies to both Gradle and Maven.
 
 ```groovy
 dependencies {
     compile 'mysql:mysql-connector-java'
 }
 ```
+
+If all is working, you should see a new `person` table in your database after starting your Spring Boot application. Watch the output of Spring Boot for errors. Note that sometimes the build says `BUILD SUCCESSFUL`, but that's not true.

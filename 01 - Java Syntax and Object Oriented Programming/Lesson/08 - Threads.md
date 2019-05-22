@@ -14,3 +14,5 @@ public class MyClass {
     }
 }
 ```
+
+If you must handle multiple threads, there are classes in [java.util.concurrent](https://docs.oracle.com/javase/10/docs/api/java/util/concurrent/package-frame.html) and [java.util.concurrent.atomic](https://docs.oracle.com/javase/10/docs/api/java/util/concurrent/atomic/package-frame.html) that will help. `ConcurrentHashMap` and `AtomicLong` are good examples.
