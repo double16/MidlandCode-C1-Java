@@ -219,7 +219,7 @@ mysql> grant all on db_example.* to 'springuser'@'%'; -- Gives all the privilege
 
 ```properties
 # The ddl-auto allows Hibernate to automatically create and update the database schema
-spring.jpa.hibernate.ddl-auto=create
+spring.jpa.hibernate.ddl-auto=update
 # db_example should be replaced by the name of your database
 # localhost:3306 refers to the MySQL database, NOT your Spring Boot application
 spring.datasource.url=jdbc:mysql://localhost:3306/db_example
