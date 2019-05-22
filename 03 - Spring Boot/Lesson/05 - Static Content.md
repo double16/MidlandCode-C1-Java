@@ -4,4 +4,4 @@ HTML, CSS, JS files can be served from Spring Boot by placing them into the `src
 
 Be careful adding `index.html`. It will take the place of other things that would return from `http://localhost:8080/`, such as the REST HAL browser.
 
-For a modern JavaScript single-page application we'll use [JHipster](https://www.jhipster.tech) later on.
+For a modern JavaScript single-page application we'll add a project for Angular that is created using the Angular CLI and integrate that with our Spring Boot build.
