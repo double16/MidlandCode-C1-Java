@@ -10,13 +10,46 @@ The base class of most collections is `java.util.Collection`. There are basic op
 
 A `java.util.List` is similar to an array in that it's elements maintain order. Lists can be added to, removed from, sorted, etc.
 
+Popular implementations of `List` are:
+
+```java
+public class MyClass {
+    public static void main(String[] args) {
+        List arrayList = new ArrayList();
+        List linkedList = new LinkedList();
+    }
+}
+```
+
 ## Set
 
 The `java.util.Set` holds an unique set of elements. Order is defined differently by the implementation. Some have an undefined order, some maintained a sorted order, ...
 
+Popular implementations of `Set` are:
+
+```java
+public class MyClass {
+    public static void main(String[] args) {
+        Set hashSet = new HashSet(); // requires hashCode()! see below
+        Set treeSet = new TreeSet(); // sorted, requires Comparable! see below
+    }
+}
+```
+
 ## Map
 
 The `java.util.Map` holds key-value pairs. The key and value may be of any class. However, the key must implement equality and in some cases `java.lang.Comparable`.
+
+Popular implementations of `Map` are:
+
+```java
+public class MyClass {
+    public static void main(String[] args) {
+        Map hashMap = new HashMap(); // requires hashCode()! see below
+        Map treeMap = new TreeMap(); // sorted keys, requires Comparable! see below
+    }
+}
+```
 
 ## Equality and Comparisons
 
@@ -29,6 +62,8 @@ There are three methods a class must implement for this capability.
 Java does not provide a built-in way to determine if two different objects are equal to each other. Two methods are needed, the `equals()` and `hashCode()` methods.
 
 ```java
+import java.util.Objects;
+
 public class Door {
     int height, width;
     @Override
@@ -41,7 +76,7 @@ public class Door {
     }
     @Override
     public int hashCode() {
-        return height * 39 + width;
+        return Objects.hash(height, width);
     }
 }
 ```
@@ -61,6 +96,42 @@ public class Door implements Comparable {
         // For simplicity, assume we're always working with doors
         Door d = (Door) obj;
         return (height*width) - (d.height*d.width);
+    }
+}
+```
+
+## Iterating
+
+Iterating over collections, lists and sets is straight forward.
+
+```java
+public class MyClass {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        for(String s : list) {
+            System.out.println(s);
+        }
+
+        Set<String> set = new HashSet<>();
+        for(String s : set) {
+            System.out.println(s);
+        }
+    }
+}
+```
+
+Maps have key-value pairs, so iterating is different.
+
+```java
+public class MyClass {
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        map.put("1", "one");
+        map.put("2", "two");
+
+        for(Map.Entry<String, String> e : map) {
+            System.out.println(e.getKey() + "=" + e.getValue());
+        }
     }
 }
 ```

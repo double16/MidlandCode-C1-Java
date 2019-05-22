@@ -25,7 +25,9 @@ A class may specify multiple generic classes:
 ```java
 public class MyClass {
     public static void main(String[] args) {
-        Map<String, BigDecimal> map = new HashMap<>();
+        Map<String, BigDecimal> taxRate = new HashMap<>();
+        taxRate.put("NE", BigDecimal.valueOf(5.5));
+        taxRate.put("IA", BigDecimal.valueOf(4));
     }
 }
 ```

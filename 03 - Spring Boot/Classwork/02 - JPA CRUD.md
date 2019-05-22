@@ -110,7 +110,7 @@ Visit <http://localhost:8080/people>. You should get something like:
 
 ## Create New Data
 
-Use the browser extension "Postman" to post the following to `http://localhost:8080/people`:
+You should have included the "Rest Repositories HAL Browser" (data-hal-browser) option in your application. Visit `http://localhost:8080/` and use the tool to post the following to `http://localhost:8080/people`:
 
 ```json
 {
@@ -234,5 +234,9 @@ dependencies {
     compile 'mysql:mysql-connector-java'
 }
 ```
+
+Comment out the dependency `'com.h2database:h2'` so Spring Boot doesn't get confused on which database it should use.
+
+You will need to refresh the Gradle project (using the Gradle tab on the right). Then restart the application.
 
 If all is working, you should see a new `person` table in your database after starting your Spring Boot application. Watch the output of Spring Boot for errors. Note that sometimes the build says `BUILD SUCCESSFUL`, but that's not true.
