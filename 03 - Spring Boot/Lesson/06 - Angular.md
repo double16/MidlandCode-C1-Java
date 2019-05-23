@@ -56,7 +56,7 @@ task installFrontEnd(type: Sync) {
     group 'build'
     description 'Builds and copies frontend into Spring Boot static location'
     dependsOn ':frontend:build'
-    from 'frontend/dist'
+    from 'frontend/dist/frontend'
     into 'src/main/resources/static'
 }
 
