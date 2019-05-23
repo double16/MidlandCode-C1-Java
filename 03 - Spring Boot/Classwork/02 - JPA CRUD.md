@@ -222,7 +222,7 @@ mysql> grant all on db_example.* to 'springuser'@'%'; -- Gives all the privilege
 spring.jpa.hibernate.ddl-auto=update
 # db_example should be replaced by the name of your database
 # localhost:3306 refers to the MySQL database, NOT your Spring Boot application
-spring.datasource.url=jdbc:mysql://localhost:3306/db_example
+spring.datasource.url=jdbc:mysql://localhost:3306/db_example?useTimezone=true&serverTimezone=UTC
 spring.datasource.username=springuser
 spring.datasource.password=ThePassword
 ```

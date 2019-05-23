@@ -14,12 +14,12 @@ task clean(type: Delete) {
 
 task build(type: NodeTask, dependsOn: npmInstall) {
   group 'build'
-  script = file('node_modules/angular-cli/bin/ng')
+  script = file('node_modules/@angular/cli/bin/ng')
   args = [ 'build' ]
 
   inputs.dir('src')
   inputs.file('package.json')
   inputs.file('package-lock.json')
-  inputs.file('angular-cli.json')
+  inputs.file('angular.json')
   outputs.dir('dist')
 }

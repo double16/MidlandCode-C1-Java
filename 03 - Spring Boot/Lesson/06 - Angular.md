@@ -10,10 +10,9 @@ You'll need to code to your front end to use the endpoints you've created with `
 
 Gradle supports multi-project builds, which means you can separate different parts of your applications by function (backend vs. frontend) and/or technology (Java vs. Angular). This makes managing the application easier.
 
-1. Create a folder named `frontend` in your existing Gradle project.
-2. In a terminal, cd to `frontend`
-3. Run `ng init --name storefront` to generate a new Angular project OR copy an existing project that was made with `ng init`. If you did it correctly there should be a file named `frontend/node_modules/angular-cli/bin/ng`.
-4. Create a `build.gradle` file in `frontend` and make it look like this:
+1. In a terminal, cd to the root of your existing Gradle project.
+2. Run `ng new --name frontend` to generate a new Angular project OR copy an existing project that was made with `ng new`. If you did it correctly there should be a file named `frontend/node_modules/@angular/cli/bin/ng`.
+3. Create a `build.gradle` file in `frontend` and make it look like this:
 
 ```groovy
 plugins {
@@ -32,24 +31,24 @@ task clean(type: Delete) {
 
 task build(type: NodeTask, dependsOn: npmInstall) {
   group 'build'
-  script = file('node_modules//angular-cli/bin/ng')
+  script = file('node_modules/@angular/cli/bin/ng')
   args = [ 'build' ]
 
   inputs.dir('src')
   inputs.file('package.json')
   inputs.file('package-lock.json')
-  inputs.file('angular-cli.json')
+  inputs.file('angular.json')
   outputs.dir('dist')
 }
 ```
 
-5. In the root Gradle project `settings.gradle`, include the new project:
+4. In the root Gradle project `settings.gradle`, include the new project:
 
 ```groovy
 include 'frontend'
 ```
 
-6. Add the following tasks to the root project `build.gradle`:
+5. Add the following tasks to the root project `build.gradle`:
 
 ```groovy
 
@@ -75,7 +74,7 @@ src/main/resources/static/
 node_modules/
 ```
 
-## Run It!
+## Run It
 
 Restart the `bootRun` task. It should take a lot longer this time. The new project will:
 
@@ -86,4 +85,3 @@ Restart the `bootRun` task. It should take a lot longer this time. The new proje
 5. Run the Spring Boot application
 
 Go to <http://localhost:8080>. You should see your Angular app. The down side is the HAL browser will be at <http://localhost:8080/browser/index.html#/> and won't be able to find all of your REST endpoints. You'll need to use the `Explore` input box to go to a particular one.
-
