@@ -113,3 +113,5 @@ Modify `frontend/angular.json`. Find the `"serve"` entry and add the `proxyConfi
             "proxyConfig": "proxy.conf.json"
           },
 ```
+
+You will need to run both `bootRun` and `ng serve` at the same time. Use <http://localhost:4200> in your browser and you should be able to reload changes to Angular. (Note that <http://localhost:8080> will still serve your 'old' Angular code, don't get confused.)
