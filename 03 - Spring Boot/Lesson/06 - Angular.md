@@ -86,7 +86,7 @@ Restart the `bootRun` task. It should take a lot longer this time. The new proje
 
 Go to <http://localhost:8080>. You should see your Angular app. The down side is the HAL browser will be at <http://localhost:8080/browser/index.html#/> and won't be able to find all of your REST endpoints. You'll need to use the `Explore` input box to go to a particular one.
 
-## Using `ns server`
+## Using `ns serve`
 
 WARNING: This approach isn't well tested, yet.
 
@@ -113,3 +113,5 @@ Modify `frontend/angular.json`. Find the `"serve"` entry and add the `proxyConfi
             "proxyConfig": "proxy.conf.json"
           },
 ```
+
+You will need to run both `bootRun` and `ng serve` at the same time. Use <http://localhost:4200> in your browser and you should be able to reload changes to Angular. (Note that <http://localhost:8080> will still serve your 'old' Angular code, don't get confused.)
