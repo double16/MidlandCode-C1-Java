@@ -57,3 +57,21 @@ Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL synta
 	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.3.10.Final.jar:5.3.10.Final]
 	... 39 common frames omitted
 ```
+
+## Caused By
+
+The first thing to do when looking at a stack trace is to look for the last `Caused by:`. It is usually the real reason there is a problem. If there are multiple stack traces, look at the first one and it's last `Caused by:`. The following traces are likely a result of the first.
+
+## Source Line
+
+Java provides the class name, source file, line number and sometimes the JAR file where the error occured. However, there are dozens or more in a single trace. Don't assume the first line you see is the real problem.
+
+In our example there are several `org.hibernate` entries at the top. That doesn't mean Hibernate is the problem. Look down until you see the code you're working on. It's down quite a bit, but there is `edu.patdouble.simplerest.DemoApplication.main(DemoApplication.java:10)`. In this case, that's not very helpful because the trace is for an invalid MySQL table name, but it's a good start.
+
+## Timeouts
+
+Sometimes the error message will say something like "timeout exceeded". Do not assume that means you only need to increase a timeout value somewhere and go about your way. There may be a `Caused by:` that gives more detailed information. Or maybe not. Do more investigation or you may be simply increasing the time it takes to see the error again.
+
+## Tools
+
+If the stack trace occurs while running the program in an IDE the source lines might be clickable. Some IDEs, like IntelliJ have an option to paste a stack trace from somewhere else and let you click the links to the source files. For IntellJ 2019.1 the menu option is `Analyze > Analyze Stack Trace ...`
