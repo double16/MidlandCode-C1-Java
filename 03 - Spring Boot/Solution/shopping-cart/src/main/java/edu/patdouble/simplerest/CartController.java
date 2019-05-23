@@ -46,6 +46,11 @@ public class CartController {
         BigDecimal total = BigDecimal.ZERO;
         for(CartItem i : cart.getItems()) {
             total = total.add(i.getPrice());
+            OrderItem orderItem = new OrderItem();
+            orderItem.setOrder(order);
+            orderItem.setProduct(i.getProduct());
+            orderItem.setPrice(i.getPrice());
+            order.getItems().add(orderItem);
         }
         order.setTotalPrice(total);
         orderRepository.save(order);
