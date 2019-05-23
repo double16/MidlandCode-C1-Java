@@ -1,0 +1,16 @@
+{
+  "customer": {
+    "firstName": "John",
+    "lastName": "Doe"
+  },
+  "items": [{
+      "product": "apple",
+      "quantity": 2,
+      "price": 1.5
+    }, {
+      "product": "orange",
+      "quantity": 12,
+      "price": 10
+    }]
+}
+
