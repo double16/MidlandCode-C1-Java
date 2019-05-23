@@ -21,10 +21,9 @@
 ### Software
 
 * [SDKMAN](https://sdkman.io)
-  * Java 8 - `sdk install java 8.0.212-zulu`
-  * Java 11 - `sdk install java 11.0.3-zulu`
-  * Spring Boot 2.1.4 - `sdk install springboot 2.1.4.RELEASE`
-* [JHipster](https://www.jhipster.tech)
+  * Java 8 - `sdk install java 8.0.212-zulu` (or latest 8.x)
+  * Java 11 - `sdk install java 11.0.3-zulu` (or latest 11.x)
+  * Spring Boot 2.1.5 - `sdk install springboot 2.1.5.RELEASE` (or latest 2.1.x)
 * [VSCode](https://code.visualstudio.com/download) with [Red Hat Java plugin](https://marketplace.visualstudio.com/items?itemName=redhat.java)
 * [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)
 * [Eclipse IDE for Enterprise Java Developers](https://www.eclipse.org/downloads/packages/release/2019-03/r/eclipse-ide-enterprise-java-developers)

@@ -4,3 +4,5 @@ pluginManagement {
 	}
 }
 rootProject.name = 'simple-rest'
+
+include 'frontend'

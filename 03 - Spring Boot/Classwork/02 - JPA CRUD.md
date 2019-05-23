@@ -110,7 +110,7 @@ Visit <http://localhost:8080/people>. You should get something like:
 
 ## Create New Data
 
-You should have included the "Rest Repositories HAL Browser" (data-hal-browser) option in your application. Visit `http://localhost:8080/` and use the tool to post the following to `http://localhost:8080/people`:
+You should have included the "Rest Repositories HAL Browser" (data-hal-browser) option in your application. Visit `http://localhost:8080/browser/index.html#/` and use the tool to post the following to `http://localhost:8080/people`:
 
 ```json
 {

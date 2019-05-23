@@ -28,3 +28,7 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+### Angular frontend ###
+src/main/resources/static/
+node_modules/
