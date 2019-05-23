@@ -11,7 +11,7 @@ You'll need to code to your front end to use the endpoints you've created with `
 Gradle supports multi-project builds, which means you can separate different parts of your applications by function (backend vs. frontend) and/or technology (Java vs. Angular). This makes managing the application easier.
 
 1. In a terminal, cd to the root of your existing Gradle project.
-2. Run `ng new frontend` to generate a new Angular project OR copy an existing project that was made with `ng new`. If you did it correctly there should be a file named `frontend/node_modules/@angular/cli/bin/ng`.
+2. Run `ng new frontend` to generate a new Angular project. If you did it correctly there should be a file named `frontend/node_modules/@angular/cli/bin/ng`.
 3. Create a `build.gradle` file in `frontend` and make it look like this:
 
 ```groovy
