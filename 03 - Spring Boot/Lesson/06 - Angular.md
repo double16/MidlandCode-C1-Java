@@ -85,3 +85,31 @@ Restart the `bootRun` task. It should take a lot longer this time. The new proje
 5. Run the Spring Boot application
 
 Go to <http://localhost:8080>. You should see your Angular app. The down side is the HAL browser will be at <http://localhost:8080/browser/index.html#/> and won't be able to find all of your REST endpoints. You'll need to use the `Explore` input box to go to a particular one.
+
+## Using `ns server`
+
+WARNING: This approach isn't well tested, yet.
+
+In order to use `ng serve` for faster development, you need to get Angular to contact `http://localhost:8080` instead of `http://localhost:4200`.
+
+Add this file `frontend/proxy.conf.json`:
+
+```json
+{
+  "/": {
+    "target": "http://localhost:8080",
+    "secure": false
+  }
+}
+```
+
+Modify `frontend/angular.json`. Find the `"serve"` entry and add the `proxyConfig` as shown:
+
+```json
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "frontend:build",
+            "proxyConfig": "proxy.conf.json"
+          },
+```
