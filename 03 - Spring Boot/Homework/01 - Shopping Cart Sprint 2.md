@@ -11,3 +11,32 @@ In `OrderItem` you can reference your product objects using `@OneToMany` or even
 Update your controller's POST method to return the order object.
 
 Update the UI to display the returned order.
+
+It is useful to know that the Repository classes you've made to create REST endpoints can also be used in your Java classes, such as `@RestController`, to manage entities using Java code.
+
+```java
+// OrderRepository.java
+@RepositoryRestResource
+public interface OrderRepository extends PagingAndSortingRepository<Order, Long> {
+
+}
+```
+
+```java
+// CartController.java
+@RestController
+public class CartController {
+    @Autowired
+    OrderRepository orders;
+
+    @RequestMapping(path = "/orders", method = RequestMethod.POST)
+    public Order submit(@RequestBody Cart cart) {
+        Order order = new Order();
+        // ...
+        orders.save(order); // save is from OrderRepository, which inherits it from CrudRepository
+        return order;
+    }
+}
+```
+
+See [`CrudRepository`](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html) for available methods.
