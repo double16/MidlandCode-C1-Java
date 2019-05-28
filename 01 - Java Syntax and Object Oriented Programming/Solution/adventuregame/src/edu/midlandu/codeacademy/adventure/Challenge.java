@@ -18,7 +18,6 @@ public class Challenge {
     }
 
     public void choose(Player player, Choice choice) {
-        System.console().writer().println(choice.getResult());
         choice.apply(player);
     }
 }

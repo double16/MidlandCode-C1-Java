@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class Cart {
-    private String firstName;
-    private String lastName;
+public class Cart implements HasCustomer {
+    private Customer customer = new Customer();
+    private Address billingAddress = new Address();
+    private Address shippingAddress = new Address();
     private List<CartItem> items = new ArrayList<>();
 }

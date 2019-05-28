@@ -2,11 +2,10 @@ package edu.patdouble.simplerest;
 
 import lombok.Data;
 
-import java.math.BigDecimal;
-
 @Data
 public class CartItem {
-    private String product;
+    private String sku;
+    private String productName;
     private int quantity;
-    private BigDecimal price;
+    private Money price;
 }

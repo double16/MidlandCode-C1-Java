@@ -4,20 +4,41 @@ Create a Spring Boot application that returns a greeting based on [Building a RE
 
 ## Create the Spring Boot Application
 
-```shell
-$ spring init -d=h2,jdbc,data-jpa,data-rest,data-rest-hal,actuator,cache,devtools,hateoas,lombok -t gradle-project -a simple-rest --description "Spring Boot REST" -g edu.midlandu.codeacademy -j 11 -p jar simple-rest
-Using service at https://start.spring.io
-Project extracted to '/Users/double/simple-rest'
-```
+Spring Boot has a starter web site that will generate a working Spring Boot application for you. There are many options to tailor it to your needs. For projects in this class we'll use the following:
+
+1. Visit <https://start.spring.io>
+2. Change `Project` to `Gradle Project`
+3. Leave `Language` as `Java`
+4. Leave `Spring Boot` to default
+5. Change `Group` to `edu.<your name>`
+6. Change `Artifact` to `simple-rest`
+7. Change `Packaging` to `Jar`
+8. Change `Java Version` to `8`
+9. Under `Dependencies` click `See all`
+10. Check the following:
+    1. DevTools
+    2. Lombok
+    3. Rest Repositories
+    4. Rest Repositories HAL Browser
+    5. HATEOAS
+    6. JPA
+    7. MySQL
+    8. H2
+    9. JDBC
+    10. Actuator
+11. Click `Update Dependencies`
+12. Click `Generate Project`
+
+Extract `simple-rest.zip` into your desktop.
 
 Import the application into IntelliJ.
 
 1. `New > Project from Existing Sources`
-2. Choose the new `simple-rest` folder
+2. Choose the new `simple-rest` folder from your desktop.
 3. Choose `Import project from external model`
 4. Choose `Gradle`
 5. Click `Next`
-6. Change Gradle JVM to `11` (or similar)
+6. Change Gradle JVM to `8` (or similar)
 
 ## Verify It Works
 

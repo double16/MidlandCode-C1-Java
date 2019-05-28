@@ -10,27 +10,27 @@ import javax.persistence.*;
 @Entity
 @EqualsAndHashCode
 @ToString
-public class OrderItem {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
-    @ManyToOne
     @Getter
-    @Setter
-    private Order order;
-
-    @ManyToOne
-    @Getter
-    @Setter
-    private Product product;
+    private Long id; // null means a guest checkout
 
     @Getter
     @Setter
-    private int quantity;
+    private String firstName;
+
+    @Getter
+    @Setter
+    private String lastName;
 
     @Embedded
     @Getter
     @Setter
-    private Money price;
+    private Address billingAddress;
+
+//    @Embedded
+//    @Getter
+//    @Setter
+//    private Address shippingAddress;
 }

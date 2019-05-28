@@ -28,7 +28,7 @@ Maven keeps it's configuration in a `pom.xml` in the root of the project. Here i
     <description>Spring Boot REST</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
 
     <dependencies>

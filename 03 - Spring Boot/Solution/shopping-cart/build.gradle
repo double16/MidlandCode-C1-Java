@@ -7,7 +7,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'edu.patdouble'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '1.8'
 
 configurations {
     compileOnly {
@@ -45,5 +45,4 @@ task installFrontEnd(type: Sync) {
 
 clean.delete "src/main/resources/static"
 
-bootRun.dependsOn(installFrontEnd)
-bootJar.dependsOn(installFrontEnd)
+processResources.dependsOn(installFrontEnd)

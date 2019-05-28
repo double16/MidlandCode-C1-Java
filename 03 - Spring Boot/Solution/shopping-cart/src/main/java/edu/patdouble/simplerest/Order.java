@@ -6,33 +6,39 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
-@EqualsAndHashCode(exclude = {"id"})
+@EqualsAndHashCode
 @ToString
 @Table(name = "orders")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     private long id;
 
     @Getter
     @Setter
-    private String firstName;
+    private Date orderDate;
 
+    @ManyToOne
     @Getter
     @Setter
-    private String lastName;
+    private Customer customer;
 
+    @Embedded
     @Getter
     @Setter
-    private BigDecimal totalPrice;
+    private Address billingAddress = new Address();
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+//    @Embedded
+//    @Getter
+//    @Setter
+//    private Address shippingAddress = new Address();
+
+    @OneToMany(mappedBy = "order")
     @Getter
     @Setter
     private List<OrderItem> items = new ArrayList<>();
