@@ -63,6 +63,10 @@ public interface PersonRepository extends PagingAndSortingRepository<Person, Lon
 
 -- [Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/)
 
+### REST
+
+REST is an architecture style for designing networked applications over HTTP. It defines conventions for the HTTP paths and methods and the JSON responses. Accessing a RESTful API can be done with any HTTP client and the JSON can be used in the regular way. The Spring Boot `@RestController` and `@RepositoryRestResource` help you build RESTful APIs more easily. See <https://restfulapi.net/> for more discussion.
+
 ## Transactions
 
 Transactions are database constructs that provide an "all or nothing" approach to database changes. Suppose you are creating an order with several items. If an error occurs, you'd want no changes in the database because it would be an incomplete order. A transaction will guarantee that.
