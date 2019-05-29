@@ -17,6 +17,7 @@
 ### Software
 
 * [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [Java 8 Documentation](https://www.oracle.com/technetwork/java/javase/documentation/jdk8-doc-downloads-2133158.html)
 * [VSCode](https://code.visualstudio.com/download) with [Red Hat Java plugin](https://marketplace.visualstudio.com/items?itemName=redhat.java)
 * [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)
   * Install plugins: `Lombok`, `Jpa Support`, `Markdown Support`
