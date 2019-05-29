@@ -40,3 +40,15 @@ public class CartController {
 ```
 
 See [`CrudRepository`](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html) for available methods.
+
+## Use `curl` to test
+
+You can submit a cart without having Angular done.
+
+1. Visit <http://localhost:8080/cart>
+2. Save the JSON to a file like `cart.json`
+3. Edit the JSON with any text editor
+4. Open a terminal in the directory with your `cart.json`. (If you save the file into your IntelliJ project directory, you can use IntelliJ's Terminal)
+5. `curl -X POST -d @cart.json -H "Content-Type: application/json" http://localhost:8080/cart`
+
+You can repeat 3 and 5 to create new orders.
