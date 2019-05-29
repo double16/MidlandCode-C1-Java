@@ -62,8 +62,8 @@ task installFrontEnd(type: Sync) {
 
 clean.delete "src/main/resources/static"
 
-bootRun.dependsOn(installFrontEnd)
-bootJar.dependsOn(installFrontEnd)
+// processResources prepares files in src/main/resources for use. We need the Angular app in place before this task.
+processResources.dependsOn(installFrontEnd)
 ```
 
 7. Add this to the root project `.gitignore`:
