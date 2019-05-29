@@ -86,7 +86,7 @@ Restart the `bootRun` task. It should take a lot longer this time. The new proje
 
 Go to <http://localhost:8080>. You should see your Angular app. The down side is the HAL browser will be at <http://localhost:8080/browser/index.html#/> and won't be able to find all of your REST endpoints. You'll need to use the `Explore` input box to go to a particular one.
 
-## Using `ns serve`
+## Using `ng serve`
 
 WARNING: This approach isn't well tested, yet.
 

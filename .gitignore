@@ -1,6 +1,7 @@
 *.class
 .idea/
 out/
+bin/
 .gradle/
 target/
 build/
