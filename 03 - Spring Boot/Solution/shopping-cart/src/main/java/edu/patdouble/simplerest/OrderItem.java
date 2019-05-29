@@ -8,7 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"id"})
 @ToString
 public class OrderItem {
     @Id

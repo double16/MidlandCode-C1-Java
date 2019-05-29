@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"id"})
 @ToString
 public class Product {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)

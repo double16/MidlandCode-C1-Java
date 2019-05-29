@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"id"})
 @ToString
 @Table(name = "orders")
 public class Order {
