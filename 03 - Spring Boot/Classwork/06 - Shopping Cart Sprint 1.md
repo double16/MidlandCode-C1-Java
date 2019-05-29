@@ -20,7 +20,7 @@ Spring will expect a JSON format that matches classes. It's possible to construc
 
 Create Java classes to model your cart. Use a `List` in your cart to holds the list of products. These classes will NOT be entities, i.e. they will not have an `@Entity` annotation. So you can use the `@Data` Lombok annotation here.
 
-Create a `@RestController` (not `@RepositoryRestController`) to receive the POST for the cart. We'll also add a method to return a cart so that we can determine what JSON Spring wants. Follow the `GreetingController` example for the controller since it is using classes that aren't JPA entities.
+Create a `@RestController` (not `@RepositoryRestResource`) to receive the POST for the cart. We'll also add a method to return a cart so that we can determine what JSON Spring wants. Follow the `GreetingController` example for the controller since it is using classes that aren't JPA entities.
 
 You will have two methods in your controller, one for GET and one for POST. For now, use `System.out.println` to output the objects you get in POST. Use `@Data` or `@ToString` will help.
 

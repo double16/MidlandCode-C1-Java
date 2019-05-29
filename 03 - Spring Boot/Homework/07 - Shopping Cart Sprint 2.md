@@ -29,7 +29,7 @@ public class CartController {
     @Autowired
     OrderRepository orders;
 
-    @RequestMapping(path = "/orders", method = RequestMethod.POST)
+    @RequestMapping(path = "/api/cart", method = RequestMethod.POST)
     public Order submit(@RequestBody Cart cart) {
         Order order = new Order();
         // ...
@@ -45,10 +45,10 @@ See [`CrudRepository`](https://docs.spring.io/spring-data/commons/docs/current/a
 
 You can submit a cart without having Angular done.
 
-1. Visit <http://localhost:8080/cart>
+1. Visit <http://localhost:8080/api/cart>
 2. Save the JSON to a file like `cart.json`
 3. Edit the JSON with any text editor
 4. Open a terminal in the directory with your `cart.json`. (If you save the file into your IntelliJ project directory, you can use IntelliJ's Terminal)
-5. `curl -X POST -d @cart.json -H "Content-Type: application/json" http://localhost:8080/cart`
+5. `curl -X POST -d @cart.json -H "Content-Type: application/json" http://localhost:8080/api/cart`
 
 You can repeat 3 and 5 to create new orders.

@@ -41,7 +41,7 @@ A Controller object handles HTTP requests. Spring makes heavy use of annotations
 ```java
 @RestController
 public class GreetingController {
-    @RequestMapping("/greeting")
+    @RequestMapping("/api/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         // ...
     }

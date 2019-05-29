@@ -79,24 +79,24 @@ Visit <http://localhost:8080>. You should get something like:
 {
   "_links" : {
     "people" : {
-      "href" : "http://localhost:8080/people{?page,size,sort}",
+      "href" : "http://localhost:8080/api/people{?page,size,sort}",
       "templated" : true
     }
   }
 }
 ```
 
-Visit <http://localhost:8080/people>. You should get something like:
+Visit <http://localhost:8080/api/people>. You should get something like:
 
 ```java
 {
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/people{?page,size,sort}",
+      "href" : "http://localhost:8080/api/people{?page,size,sort}",
       "templated" : true
     },
     "search" : {
-      "href" : "http://localhost:8080/people/search"
+      "href" : "http://localhost:8080/api/people/search"
     }
   },
   "page" : {
@@ -110,7 +110,7 @@ Visit <http://localhost:8080/people>. You should get something like:
 
 ## Create New Data
 
-You should have included the "Rest Repositories HAL Browser" (data-hal-browser) option in your application. Visit `http://localhost:8080/browser/index.html#/` and use the tool to post the following to `http://localhost:8080/people`:
+You should have included the "Rest Repositories HAL Browser" (data-hal-browser) option in your application. Visit `http://localhost:8080/api/browser/index.html#/` and use the tool to post the following to `http://localhost:8080/api/people`:
 
 ```json
 {
@@ -121,17 +121,17 @@ You should have included the "Rest Repositories HAL Browser" (data-hal-browser) 
 
 ## Verify It Worked
 
-Visit <http://localhost:8080/people>:
+Visit <http://localhost:8080/api/people>:
 
 ```json
 {
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/people{?page,size,sort}",
+      "href" : "http://localhost:8080/api/people{?page,size,sort}",
       "templated" : true
     },
     "search" : {
-      "href" : "http://localhost:8080/people/search"
+      "href" : "http://localhost:8080/api/people/search"
     }
   },
   "_embedded" : {
@@ -140,7 +140,7 @@ Visit <http://localhost:8080/people>:
       "lastName" : "Baggins",
       "_links" : {
         "self" : {
-          "href" : "http://localhost:8080/people/1"
+          "href" : "http://localhost:8080/api/people/1"
         }
       }
     } ]
@@ -156,7 +156,7 @@ Visit <http://localhost:8080/people>:
 
 ## Get an Individual Record
 
-<http://localhost:8080/people/1>:
+<http://localhost:8080/api/people/1>:
 
 ```json
 {
@@ -164,7 +164,7 @@ Visit <http://localhost:8080/people>:
   "lastName" : "Baggins",
   "_links" : {
     "self" : {
-      "href" : "http://localhost:8080/people/1"
+      "href" : "http://localhost:8080/api/people/1"
     }
   }
 }
@@ -172,13 +172,13 @@ Visit <http://localhost:8080/people>:
 
 ## Get Available Queries
 
-<http://localhost:8080/people/search>:
+<http://localhost:8080/api/people/search>:
 
 ```json
 {
   "_links" : {
     "findByLastName" : {
-      "href" : "http://localhost:8080/people/search/findByLastName{?name}",
+      "href" : "http://localhost:8080/api/people/search/findByLastName{?name}",
       "templated" : true
     }
   }
@@ -187,7 +187,7 @@ Visit <http://localhost:8080/people>:
 
 ## Last Name Search
 
-<http://localhost:8080/people/search/findByLastName?name=Baggins>:
+<http://localhost:8080/api/people/search/findByLastName?name=Baggins>:
 
 ```json
 {
@@ -197,7 +197,7 @@ Visit <http://localhost:8080/people>:
       "lastName" : "Baggins",
       "_links" : {
         "self" : {
-          "href" : "http://localhost:8080/people/1"
+          "href" : "http://localhost:8080/api/people/1"
         }
       }
     } ]

@@ -39,6 +39,8 @@ Import the application into IntelliJ.
 4. Choose `Gradle`
 5. Click `Next`
 6. Change Gradle JVM to `8` (or similar)
+7. Open `src/main/resources/application.properties`
+8. Add the following and save the file: `spring.data.rest.base-path=/api`
 
 ## Verify It Works
 
@@ -98,7 +100,7 @@ public class GreetingController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/greeting")
+    @RequestMapping("/api/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
@@ -112,7 +114,7 @@ In the `Run` window at the bottom, find the green restart arrow. It will be on t
 
 ## Check It
 
-In your browser, visit <http://localhost:8080/greeting>.
+In your browser, visit <http://localhost:8080/api/greeting>.
 
 You should see:
 

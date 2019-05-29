@@ -45,7 +45,7 @@ public class PersonJdbcController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @RequestMapping(path = "/people", method = RequestMethod.GET)
+    @RequestMapping(path = "/api/people", method = RequestMethod.GET)
     public List<Person> allPeople() {
         List<Person> results = jdbcTemplate.query(
                 "select first_name, last_name from person",
@@ -72,12 +72,12 @@ public class PersonJdbcController {
     /**
      * This is only an example and a terrible idea!
      */
-    @RequestMapping(path = "/people", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/api/people", method = RequestMethod.DELETE)
     public int deleteAllPeople() {
         return jdbcTemplate.update("delete from person");
     }
 
-    @RequestMapping(path = "/people", method = RequestMethod.POST)
+    @RequestMapping(path = "/api/people", method = RequestMethod.POST)
     public int update(@RequestParam("lastName") String lastName) {
         return jdbcTemplate.update("update person set last_modified=now() where last_name = ?", lastName);
     }

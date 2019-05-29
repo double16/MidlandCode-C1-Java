@@ -21,7 +21,7 @@ public class CartController {
     @Autowired
     ProductRepository productRepository;
 
-    @RequestMapping(path = "/cart", method = RequestMethod.GET)
+    @RequestMapping(path = "/api/cart", method = RequestMethod.GET)
     public Cart getCart() {
         Cart cart = new Cart();
         cart.getCustomer().setFirstName("Frodo");
@@ -36,7 +36,7 @@ public class CartController {
         return cart;
     }
 
-    @RequestMapping(path = "/cart", method = RequestMethod.POST)
+    @RequestMapping(path = "/api/cart", method = RequestMethod.POST)
     public String placeOrder(@RequestBody Cart cart) {
         Order order = new Order();
 

@@ -29,7 +29,7 @@ public class PersonJdbcController {
         }
     }
 
-    @RequestMapping(path = "/people2", method = RequestMethod.GET)
+    @RequestMapping(path = "/api/people2", method = RequestMethod.GET)
     public List<Person> allPeople(@RequestParam(value = "last_name", defaultValue = "") String lastName) {
         List<Person> results;
         if (lastName.isBlank()) {

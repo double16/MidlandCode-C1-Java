@@ -4,7 +4,7 @@ We will use Angular as the frontend technology and integrate it with Spring Boot
 
 ## API Endpoints
 
-You'll need to code to your front end to use the endpoints you've created with `@RepositoryRestController` and `@RestController`. Do not include `http://localhost:8080` or you'll have issues later when deploying to a server that is using a different host and/or port. If `http://localhost:8080/people` is your endpoint, use `/people`.
+You'll need to code to your front end to use the endpoints you've created with `@RepositoryRestResource` and `@RestController`. Do not include `http://localhost:8080` or you'll have issues later when deploying to a server that is using a different host and/or port. If `http://localhost:8080/api/people` is your endpoint, use `/people`.
 
 ## Build Integration
 
@@ -84,7 +84,7 @@ Restart the `bootRun` task. It should take a lot longer this time. The new proje
 4. Install into the Spring Boot `src/main/resources/static` directory
 5. Run the Spring Boot application
 
-Go to <http://localhost:8080>. You should see your Angular app. The down side is the HAL browser will be at <http://localhost:8080/browser/index.html#/> and won't be able to find all of your REST endpoints. You'll need to use the `Explore` input box to go to a particular one.
+Go to <http://localhost:8080>. You should see your Angular app. The down side is the HAL browser will be at <http://localhost:8080/api/browser/index.html#/> and won't be able to find all of your REST endpoints. You'll need to use the `Explore` input box to go to `/api`.
 
 ## Using `ng serve`
 
@@ -96,7 +96,7 @@ Add this file `frontend/proxy.conf.json`:
 
 ```json
 {
-  "/": {
+  "/api": {
     "target": "http://localhost:8080",
     "secure": false
   }
