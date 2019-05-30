@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -39,6 +40,7 @@ public class CartController {
     @RequestMapping(path = "/api/cart", method = RequestMethod.POST)
     public String placeOrder(@RequestBody Cart cart) {
         Order order = new Order();
+        order.setOrderDate(new Date());
 
         if (cart.getCustomer().getId() != null) {
             order.setCustomer(customerRepository.findById(cart.getCustomer().getId()).get());

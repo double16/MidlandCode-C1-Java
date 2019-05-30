@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 
 @Entity
 @EqualsAndHashCode(exclude = {"id"})
@@ -28,4 +29,14 @@ public class Product {
     @Getter
     @Setter
     private Money price;
+
+    public Product() {
+
+    }
+
+    public Product(String sku, String name, BigDecimal price) {
+        this.sku = sku;
+        this.name = name;
+        this.price = new Money(price, "USD");
+    }
 }
