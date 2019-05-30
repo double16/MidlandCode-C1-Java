@@ -29,9 +29,9 @@ public class CartController {
         cart.getCustomer().setLastName("Baggins");
 
         CartItem item1 = new CartItem();
-        item1.setSku("DEADBEEF");
+        item1.setSku("SKU-1234");
         item1.setQuantity(2);
-        item1.setProductName("Steak");
+        item1.setProductName("Dog Whistle");
         cart.getItems().add(item1);
 
         return cart;

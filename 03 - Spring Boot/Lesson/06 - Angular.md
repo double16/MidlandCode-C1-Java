@@ -66,6 +66,37 @@ clean.delete "src/main/resources/static"
 processResources.dependsOn(installFrontEnd)
 ```
 
+6. Spring Boot will handle all of your HTTP requests, which makes Angular routes not work because Spring Boot returns a "Not Found" response. Add the following file in the `src/main/java` directory, inside the `edu.<your_name>.simple_rest` package. Name the file `WebApplicationConfig.java`. Make sure to fix the package name in the first line.
+
+```java
+package edu.<your_name>.simplerest;
+
+import org.springframework.boot.web.server.ErrorPage;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebApplicationConfig implements WebMvcConfigurer {
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/notFound").setViewName("forward:/index.html");
+    }
+
+    @Bean
+    public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> containerCustomizer() {
+        return container -> {
+            container.addErrorPages(new ErrorPage(HttpStatus.NOT_FOUND,
+                    "/notFound"));
+        };
+    }
+}
+```
+   
 7. Add this to the root project `.gitignore`:
 
 ```.gitignore
