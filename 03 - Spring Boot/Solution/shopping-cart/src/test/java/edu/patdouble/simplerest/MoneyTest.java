@@ -1,31 +1,4 @@
-# Unit Testing
-
-JUnit is the most popular unit testing tool for Java. It uses normal Java classes and annotations.
-
-The following is a simple test of Spring Boot initialization provided by the generated project:
-
-```java
-package edu.<your_name>.simplerest;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class DemoApplicationTests {
-    @Test
-    public void contextLoads() {
-        // this test ensures Spring loads, so no further work here
-    }
-}
-```
-
-Here is a test for the `Money` class in the solution directory:
-
-```java
-package edu.<your_name>.simplerest;
+package edu.patdouble.simplerest;
 
 import org.junit.Test;
 
@@ -60,4 +33,3 @@ public class MoneyTest {
         assertNotEquals(m10a, m5a);
     }
 }
-```
